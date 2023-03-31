@@ -1,0 +1,7 @@
+{
+  "name": "SnowAxeCaps",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
