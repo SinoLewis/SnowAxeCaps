@@ -1,16 +1,16 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
-import { getCurrentTheme, getTheme } from '@/shared/themes';
-import axios from 'axios';
-import { UiVersion } from '@/types';
-import { FtWsMessageTypes } from '@/types/wsMessageTypes';
+import { getCurrentTheme, getTheme } from "@/shared/themes";
+import axios from "axios";
+import { UiVersion } from "@/types";
+import { FtWsMessageTypes } from "@/types/wsMessageTypes";
 
-const STORE_UI_SETTINGS = 'ftUISettings';
+const STORE_UI_SETTINGS = "ftUISettings";
 
 export enum OpenTradeVizOptions {
-  showPill = 'showPill',
-  asTitle = 'asTitle',
-  noOpenTrades = 'noOpenTrades',
+  showPill = "showPill",
+  asTitle = "asTitle",
+  noOpenTrades = "noOpenTrades",
 }
 
 const notificationDefaults = {
@@ -20,15 +20,15 @@ const notificationDefaults = {
   [FtWsMessageTypes.exitCancel]: true,
 };
 
-export const useSettingsStore = defineStore('uiSettings', {
+export const useSettingsStore = defineStore("uiSettings", {
   // other options...
   state: () => {
     return {
       openTradesInTitle: OpenTradeVizOptions.showPill as string,
-      timezone: 'UTC',
+      timezone: "UTC",
       backgroundSync: true,
       currentTheme: getCurrentTheme(),
-      uiVersion: 'dev',
+      uiVersion: "dev",
       useHeikinAshiCandles: false,
       notifications: notificationDefaults,
       profitDistributionBins: 20,
@@ -43,14 +43,14 @@ export const useSettingsStore = defineStore('uiSettings', {
       return true;
     },
     chartTheme(): string {
-      return this.isDarkTheme ? 'dark' : 'light';
+      return this.isDarkTheme ? "dark" : "light";
     },
   },
   actions: {
     async loadUIVersion() {
-      if (process.env.NODE_ENV = 'production') {
+      if (process.env.NODE_ENV === "production") {
         try {
-          const result = await axios.get<UiVersion>('/ui_version');
+          const result = await axios.get<UiVersion>("/ui_version");
           const { version } = result.data;
           this.uiVersion = version;
         } catch (error) {

@@ -42,24 +42,12 @@
     </ion-header>
     <ion-content class="ion-padding">
       <ion-list>
-        <ion-list-header>
+        <!-- <ion-list-header>
           <h6 class="md:min-w-full uppercase font-bold pt-1 pb-4">
             Admin Layout
           </h6>
-        </ion-list-header>
+        </ion-list-header> -->
         <ion-menu-toggle auto-hide="false">
-          <a href="/home">
-            <ion-item button>
-              <ion-icon
-                :icon="homeOutline"
-                size="large"
-                color="primary"
-              ></ion-icon>
-              <ion-label color="primary">
-                <p class="uppercase p-3 font-bold hover:text-blue-600">Home</p>
-              </ion-label>
-            </ion-item>
-          </a>
           <a href="/freqtrade">
             <ion-item button>
               <ion-icon
@@ -102,7 +90,7 @@
               </ion-label>
             </ion-item>
           </a>
-          <a href="/settings">
+          <a href="/nft">
             <ion-item button>
               <ion-icon
                 :icon="settingsOutline"
@@ -110,9 +98,7 @@
                 color="primary"
               ></ion-icon>
               <ion-label>
-                <p class="uppercase p-3 font-bold hover:text-blue-600">
-                  Settings
-                </p>
+                <p class="uppercase p-3 font-bold hover:text-blue-600">NFT's</p>
               </ion-label>
             </ion-item>
           </a>
@@ -124,7 +110,7 @@
     <ion-header>
       <ion-grid>
         <ion-row>
-          <ioc-col class="flex items-center">
+          <ion-col class="flex items-center">
             <ion-buttons slot="start">
               <ion-menu-button></ion-menu-button>
             </ion-buttons>
@@ -140,7 +126,7 @@
                   </p> -->
               <!-- </ion-label> -->
             </ion-item>
-          </ioc-col>
+          </ion-col>
           <ion-col>
             <div class="flex">
               <ion-searchbar
@@ -172,6 +158,8 @@ import {
   IonRouterOutlet,
   // IonNavLink,
   // IonTabButton,
+  IonSearchbar,
+  IonAvatar,
   IonButtons,
   IonContent,
   IonHeader,
@@ -196,8 +184,6 @@ import {
   // IonCardTitle,
   // IonCardSubtitle,
 } from "@ionic/vue";
-import { defineComponent } from "vue";
-// import FooterAdmin from "@/components/layouts/FooterAdmin.vue";
 import {
   logoIonic,
   homeOutline,
