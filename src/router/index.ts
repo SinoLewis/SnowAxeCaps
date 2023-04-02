@@ -42,6 +42,30 @@ const routes: Array<RouteRecordRaw> = [
         path: "logs",
         component: () => import("@/views/Freqtrade/Logs.vue"),
       },
+      {
+        path: "open_trades",
+        component: () => import("@/views/Freqtrade/TradesList.vue"),
+      },
+      {
+        path: "trade_history",
+        component: () => import("@/views/Freqtrade/TradesList.vue"),
+        props: { history: true },
+      },
+      {
+        path: "settings",
+        component: () => import("@/views/Freqtrade/Settings.vue"),
+      },
+      {
+        path: "login",
+        component: () => import("@/views/Freqtrade/LoginView.vue"),
+        meta: {
+          allowAnonymous: true,
+        },
+      },
+      {
+        path: "backtest",
+        component: () => import("@/views/Freqtrade/Backtesting.vue"),
+      },
     ],
   },
   {
