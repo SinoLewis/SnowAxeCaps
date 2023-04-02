@@ -14,9 +14,26 @@
 
 - Replace router-view with ionic-tabs
 - Inject Views & Compos
-  - Views: 1) Bots 2) Trade 3) Dashboard 4) Charts 5) Logs
-  - Secondary Views: 6) LoginModal 7) LoginView 8) BackTesting 9) OpenTrade 10) TradeHistory 11) Settings 12) 404
-    (c) - PoC: make API request of /api/ping to freqtrade server from gigsdash using stores & shared scripts
+
+  - Views:
+
+    1. Bots
+    2. Trade
+    3. Dashboard
+    4. Charts
+    5. Logs
+
+  - Secondary Views:
+
+    1. LoginModal
+    2. LoginView
+    3. BackTesting
+    4. OpenTrade
+    5. TradeHistory
+    6. Settings
+    7. 404
+
+- (c) PoC: make API request of /api/ping to freqtrade server from gigsdash using stores & shared scripts
 
 2. Solve router to tabs error in App.vue
 
@@ -82,6 +99,7 @@
 ## **5. Performance & Testing**
 
 1. Purge unused styles & scripts
+2. Decide on Using FreqUi stylesheets or Custom TailwindCss
 
 ## **6. Economics Explained**
 
