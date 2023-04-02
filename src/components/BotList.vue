@@ -8,7 +8,9 @@
         :active="bot.botId === botStore.selectedBot"
         button
         :title="`${bot.botId} - ${bot.botName} - ${bot.botUrl} - ${
-          botStore.botStores[bot.botId].isBotLoggedIn ? '' : 'Login info expired!'
+          botStore.botStores[bot.botId].isBotLoggedIn
+            ? ''
+            : 'Login info expired!'
         }`"
         @click="botStore.selectBot(bot.botId)"
       >
@@ -28,18 +30,23 @@
         />
       </b-list-group-item>
     </b-list-group>
-    <LoginModal v-if="!small" ref="loginModal" class="mt-2" login-text="Add new bot" />
+    <login-modal
+      v-if="!small"
+      ref="loginModal"
+      class="mt-2"
+      login-text="Add new bot"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import LoginModal from '@/views/LoginModal.vue';
-import BotEntry from '@/components/BotEntry.vue';
-import BotRename from '@/components/BotRename.vue';
+import LoginModal from "@/views/Freqtrade/LoginModal.vue";
+import BotEntry from "@/components/BotEntry.vue";
+import BotRename from "@/components/BotRename.vue";
 
-import { ref } from 'vue';
-import { useBotStore } from '@/stores/ftbotwrapper';
-import { AuthStorageWithBotId } from '@/types';
+import { ref } from "vue";
+import { useBotStore } from "@/stores/ftbotwrapper";
+import { AuthStorageWithBotId } from "@/types";
 
 defineProps({
   small: { default: false, type: Boolean },

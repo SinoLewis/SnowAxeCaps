@@ -1,11 +1,12 @@
 <template>
   <ion-page>
     <ion-tabs>
+      <bot-alerts></bot-alerts>
       <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="tab1" href="/freqtrade/login">
+        <ion-tab-button tab="tab1" href="/freqtrade/bots">
           <ion-icon :icon="playCircle" />
-          <ion-label>Login</ion-label>
+          <ion-label>Bots</ion-label>
         </ion-tab-button>
 
         <ion-tab-button tab="tab2" href="/freqtrade/trade">
@@ -46,4 +47,24 @@ import {
   IonLabel,
 } from "@ionic/vue";
 import { playCircle, radio, library, search } from "ionicons/icons";
+import { setTimezone } from "@/shared/formatters";
+import { onMounted, watch } from "vue";
+import { useSettingsStore } from "@/stores/settings";
+import BotAlerts from "@/components/ftbot/BotAlerts.vue";
+
+const settingsStore = useSettingsStore();
+
+onMounted(() => {
+  setTimezone(settingsStore.timezone);
+  // console.log("Freqtrade Index Onmounted hook: ", settingsStore.timezone);
+});
+
+watch(
+  () => settingsStore.timezone,
+  (tz) => {
+    console.log("timezone changed", tz);
+    // console.log("Freqtrade Index Watch hook");
+    setTimezone(tz);
+  }
+);
 </script>
