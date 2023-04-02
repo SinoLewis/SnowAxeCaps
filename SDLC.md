@@ -7,13 +7,13 @@
 
 1. Freqtade Modules injection
 
-- Merge config files from Freqtade
+- Replace router-view with ionic-tabs
+- (c) Merge config files from Freqtade
 
   - merge frequi vite.config to ionic app
   - merge frequi tsconfig to ionic app
 
-- Replace router-view with ionic-tabs
-- Inject Views & Compos
+- (c) Inject Views & Compos
 
   - Views:
 
@@ -48,14 +48,12 @@
 |     |           |                                                      |      |     |
 | 3.  | Settings  | - Admin account profile                              |      |     |
 |     |           |                                                      |      |     |
-| 4.  | Freqtrade | - Read from Freqtrade server                         |      |     |
-|     |           | - Write to freqtrade server                          |      |     |
+| 4.  | Freqtrade | - (c) Read & Write from Freqtrade server             |      |     |
 |     |           | - Run Bot Strats                                     |      |     |
 |     |           | - Implemenent Arbitrage trading strats               |      |     |
 |     |           |                                                      |      |     |
 | 5.  | Openai    | - Init openai auth client                            |      |     |
-|     |           | - Read from Freqtrade server                         |      |     |
-|     |           | - Write to freqtrade server                          |      |     |
+|     |           | - Read & Write from Freqtrade server                 |      |     |
 |     |           | - Run Bot Strats with Openai logic (part time larry) |      |     |
 |     |           | - Interface for speech transcriptions                |      |     |
 |     |           |                                                      |      |     |
