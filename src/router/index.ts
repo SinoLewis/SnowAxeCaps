@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "@ionic/vue-router";
 import { RouteRecordRaw } from "vue-router";
+import { initBots, useBotStore } from "@/stores/ftbotwrapper";
 import Freqtrade from "../views/Freqtrade/Index.vue";
 import Fireshop from "../views/Fireshop/Index.vue";
 import Nft from "../views/Nft/Index.vue";
@@ -16,11 +17,14 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "",
-        redirect: "/freqtrade/login",
+        redirect: "/freqtrade/bots",
       },
       {
-        path: "login",
-        component: () => import("@/views/Freqtrade/Login.vue"),
+        path: "bots",
+        component: () => import("@/views/Freqtrade/Bots.vue"),
+        meta: {
+          allowAnonymous: true,
+        },
       },
       {
         path: "trade",
@@ -115,6 +119,22 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+});
+
+router.beforeEach(() => {
+  // Init bots here...
+  initBots();
+  // TODO: Set Auth rediret
+  // const botStore = useBotStore();
+  // if (!to.meta?.allowAnonymous && !botStore.hasBots) {
+  //   // Forward to login if login is required
+  //   next({
+  //     path: "/freqtrade/login",
+  //     query: { redirect: to.fullPath },
+  //   });
+  // } else {
+  //   next();
+  // }
 });
 
 export default router;
