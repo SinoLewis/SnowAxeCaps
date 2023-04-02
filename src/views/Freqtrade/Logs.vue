@@ -12,7 +12,9 @@
         </ion-toolbar>
       </ion-header>
       <h2>Freqtrade Logs</h2>
-      <ExploreContainer name="Freqtrade Logs stuff" />
+      <div class="p-4 h-100">
+        <LogViewer />
+      </div>
     </ion-content>
   </ion-page>
 </template>
@@ -25,5 +27,5 @@ import {
   IonTitle,
   IonContent,
 } from "@ionic/vue";
-import ExploreContainer from "@/components/ExploreContainer.vue";
+import LogViewer from "@/components/ftbot/LogViewer.vue";
 </script>
