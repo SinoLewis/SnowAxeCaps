@@ -26,4 +26,14 @@ import {
   IonContent,
 } from "@ionic/vue";
 import ExploreContainer from "@/components/ExploreContainer.vue";
+import { onMounted, onUnmounted } from "vue";
+
+onMounted(() => {
+  console.log("Fireshop Orders mounted");
+});
+
+onUnmounted(() => {
+  console.log("Fireshop Orders Unmounted");
+});
+
 </script>
