@@ -90,14 +90,15 @@
 
 - Build apk binary for the UI
 - Build apk binary for the UI + Server for android
+- Deploying each module server as either docker or app instance.
 
-2. Deployment & Releases workflow
-3. Deploying each module server as either docker or app instance.
+2. Github Deployment & Releases workflow
 
 ## **5. Performance & Testing**
 
 1. Purge unused styles & scripts
 2. Decide on Using FreqUi stylesheets or Custom TailwindCss
+3. [web.dev Performance & PWA & Networking guides](https://web.dev/explore/)
 
 ## **6. Economics Explained**
 
